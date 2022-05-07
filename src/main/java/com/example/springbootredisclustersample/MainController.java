@@ -21,6 +21,9 @@ public class MainController {
         this.httpSession = httpSession;
     }
 
+    /**
+     * save value to redis session.
+     */
     @GetMapping("/set-session/{value}")
     @ResponseBody
     public String setValueToRedis(@PathVariable("value") String value) {
@@ -28,6 +31,9 @@ public class MainController {
         return "OK";
     }
 
+    /**
+     * get value from redis session.
+     */
     @GetMapping("/get-session")
     @ResponseBody
     public String getValueFromRedis() {
